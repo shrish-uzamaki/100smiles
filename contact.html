@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Contact Us – 100SMILES Dental Care</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact & Booking – 100SMILES Dental Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body>
+
 <header>
   <div class="wrapper">
     <nav>
@@ -20,32 +23,81 @@
 </header>
 
 <main class="wrapper">
+
   <section class="hero">
-    <h1>Contact</h1>
-    <p>We’d love to help. Get in touch to book your visit.</p>
+    <h1>Contact & Booking</h1>
+    <p>Get in touch or book an appointment using our online form.</p>
   </section>
 
   <section class="grid cols-2" style="margin-top:24px">
+
     <div class="card">
-      <div class="kv"><b>Phone</b><span><a href="tel:+61750005599">07 5000 5599</a></span></div>
-      <div class="kv"><b>Email</b><span><a href="mailto:admin@100smilesdentalcare.com.au">admin@100smilesdentalcare.com.au</a></span></div>
-      <div class="kv"><b>Address</b><span>33 Fantail Street, Razole, Queensland</span></div>
-      <p style="margin-top:10px">
-        <a class="cta" href="mailto:admin@100smilesdentalcare.com.au?subject=Appointment%20Booking">Book via Email</a>
-      </p>
-    </div>
-    <div class="card">
-      <h3>Opening Hours</h3>
+      <h3>Clinic Details</h3>
+
+      <div class="kv"><b>Phone</b> <span>07 5000 5599</span></div>
+      <div class="kv"><b>Email</b> <span>admin@100smilesdentalcare.com.au</span></div>
+      <div class="kv"><b>Address</b> <span>33 Fantail Street, Razole</span></div>
+
+      <h3 style="margin-top:20px;">Opening Hours</h3>
       <ul class="list">
-        <li>Monday – Friday: 8:30am – 6:30pm</li>
-        <li>Saturday – Sunday: 8:30am – 1:00pm</li>
+        <li>Mon–Fri: 8:30am – 6:30pm</li>
+        <li>Sat–Sun: 8:30am – 1:00pm</li>
       </ul>
     </div>
+
+    <div class="card" id="booking-form">
+      <h3>Book an Appointment</h3>
+      <div id="errors" class="error"></div>
+
+      <form onsubmit="validateForm(event)">
+
+        <label>Full Name *</label>
+        <input type="text" id="name">
+
+        <label>Email *</label>
+        <input type="email" id="email">
+
+        <label>Phone</label>
+        <input type="tel" id="phone">
+
+        <label>Choose Service *</label>
+        <select id="service">
+          <option value="">-- Select --</option>
+          <option>Check-up & Cleaning</option>
+          <option>Dental Implants</option>
+          <option>Teeth Whitening</option>
+          <option>Braces / Orthodontics</option>
+          <option>Root Canal</option>
+        </select>
+
+        <div class="form-row">
+          <div>
+            <label>Date *</label>
+            <input type="date" id="date">
+          </div>
+          <div>
+            <label>Time *</label>
+            <input type="time" id="time">
+          </div>
+        </div>
+
+        <label>Message (optional)</label>
+        <textarea id="message"></textarea>
+
+        <button class="cta" type="submit">Submit Booking</button>
+
+      </form>
+    </div>
+
   </section>
+
 </main>
 
 <footer>
-  <div class="wrapper"><div class="kv"><b>Promotion</b><span>20% off your first visit when you book through email.</span></div></div>
+  <div class="wrapper">
+    <div class="kv"><b>Promotion</b><span>25% off your next visit when booked online.</span></div>
+  </div>
 </footer>
+
 </body>
 </html>
